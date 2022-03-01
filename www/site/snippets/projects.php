@@ -6,6 +6,7 @@
       <a href="<?= $image->url() ?>">
         <img loading="lazy" src="<?= $image->resize(null, 180)->url(); ?>" alt="<?=$image->name()?>" />
       </a>
+
       <?php endforeach ?>
     </li>
   </ul>
