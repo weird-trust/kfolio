@@ -15,7 +15,5 @@
 
 <body>
   <header>
-    <h1>Klara Neubauer</h1>
-    <p>Graphic design and observations, currently working for and as a part of <a href="https://waf.gmbh">waf.gmbh</a>
-    </p>
+
   </header>

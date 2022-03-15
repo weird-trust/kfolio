@@ -1,0 +1,18 @@
+title: Home
+icon: 📝
+preset: page
+files: true
+
+status:
+  draft: true
+
+pages:
+  template: home
+
+fields:
+  text:
+    type: textarea
+    size: huge
+
+
+

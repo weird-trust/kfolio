@@ -11,10 +11,11 @@
 
 @font-face {
   font-family: Mondwest;
-  src: url("../www/assets/fonts/Mondwest-Regular.woff2") format("woff2");
+  src: url('../www/assets/fonts/Mondwest-Regular.woff2') format('woff2');
 }
 
 body {
+  overflow-x: hidden;
   padding-left: 0.4em;
   padding-right: 0.4em;
   padding-bottom: 1em;
@@ -25,9 +26,6 @@ body {
 
 main {
   background: white;
-}
-section {
-  border: 1px solid red;
 }
 
 h1 {
@@ -47,16 +45,6 @@ h3 {
 h3 {
   font-family: Mondwest, serif;
   padding-bottom: 2.4em;
-}
-
-header p {
-  padding-bottom: 2.4em;
-  padding-top: 0em;
-}
-
-p {
-  padding-bottom: 0.8em;
-  padding-top: 0.4em;
 }
 
 a {
@@ -82,15 +70,6 @@ a:hover {
   margin-left: 4em;
 }
 
-/*designproject img {
-width: 70vw;
-height:auto;
-}*/
-
-/*.flickity-button {
-display: none;
-}*/
-
 .designproject {
   margin-left: 5em;
 }
@@ -100,44 +79,20 @@ li img {
   width: auto;
 }
 
-.designproject #keel img {
-  width: 70vw;
-  height: auto;
+.slideshow {
+  display: grid;
+  grid-template: 'container';
+  place-items: left;
+  place-content: left;
+  overflow: hidden;
+}
+.slides {
+  opacity: 0;
+  z-index: 1;
+  grid-area: container;
 }
 
-@media screen and (max-width: 700px) {
-  .designproject img {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .designproject {
-    margin-left: 0;
-  }
-
-  /*.photoproject {
-  flex-direction: column;
-}
-
-.photoproject li {
-  height: unset;
-  width: 100%;
-}
-
-li img {
-  width: 100%;
-  height: auto;
-}*/
-
-  h2,
-  h3 {
-    font-size: 1em;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  h2,
-  h3 {
-    font-size: 3em;
-  }
+.showing {
+  opacity: 1;
+  z-index: 2;
 }

@@ -1,14 +1,7 @@
 title: Default Page
-icon: 📝
 preset: page
-
-status:
-  draft: true
-
-pages:
-  template: default
-
 fields:
   text:
+    label: Text
     type: textarea
-    size: huge
+    size: large

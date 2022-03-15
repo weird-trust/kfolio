@@ -1,0 +1,18 @@
+title: Project
+icon: 📔
+
+columns: 
+  - width: 1/2
+    sections:
+      info:
+        type: fields
+        fields:
+          text:
+          
+  - width: 1/2
+    sections:
+      gallery:
+        type: files
+        layout: cards
+        image:
+          ratio: 1/1
