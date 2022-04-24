@@ -82,8 +82,8 @@ li img {
 .slideshow {
   display: grid;
   grid-template: 'container';
-  place-items: left;
-  place-content: left;
+  place-items: right;
+  place-content: right;
   overflow: hidden;
 }
 .slides {
