@@ -1,5 +1,0 @@
-Title: Slideshows
-
-----
-
-Text: photoslider

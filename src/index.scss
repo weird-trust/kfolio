@@ -61,11 +61,6 @@ a:hover {
   padding: 0em 0.4em 0.4em 0em;
 }
 
-// .photoproject {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
 .project .designproject {
   margin-left: 4em;
 }
@@ -82,8 +77,8 @@ li img {
 .slideshow {
   display: grid;
   grid-template: 'container';
-  place-items: left;
-  place-content: left;
+  place-items: right;
+  place-content: right;
   overflow: hidden;
 }
 .slides {

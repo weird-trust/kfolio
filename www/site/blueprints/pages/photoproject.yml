@@ -1,4 +1,4 @@
-title: Design- and Photoprojects
+title: photoproject
 icon: 📔
 
 options: 
@@ -6,11 +6,11 @@ options:
     - designproject 
     - photoproject
 
+    
 sections:
-  projects:
-    type: pages
+  images:
+    type: files
     layout: cards
     image:
-      ratio: 16/9
+      ratio: 4/5
       cover: true
-
