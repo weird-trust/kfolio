@@ -1,14 +1,22 @@
+class Slideshow {
+  constructor(element) {
+    this.element = element;
+    this.slides = element.getElementsByClassName('slides');
+    this.element.firstElementChild.className = 'slides showing';
+    this.currentSlide = 0;
+    this.bindEvents();
+  }
+  bindEvents() {
+    this.element.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.slides[this.currentSlide].className = 'slides';
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+      this.slides[this.currentSlide].className = 'slides showing';
+    });
+  }
+}
 const slideshows = document.getElementsByClassName('slideshow');
 
 for (const slideshow of slideshows) {
-  const slides = slideshow.getElementsByClassName('slides');
-  slideshow.firstElementChild.className = 'slides showing ';
-  let currentSlide = 0;
-
-  slideshow.addEventListener('click', (event) => {
-    event.preventDefault();
-    slides[currentSlide].className = 'slides';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].className = 'slides showing';
-  });
+  new Slideshow(slideshow);
 }
