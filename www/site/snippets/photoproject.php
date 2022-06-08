@@ -1,9 +1,10 @@
-<section id="<?= $data->id() ?>">
+<section>
   <ul class="photoproject">
     <li>
       <?php foreach($data->images() as $image): ?>
-      <a href="<?= $image->url() ?>">
-        <img loading="lazy" src="<?= $image->resize(null, 180)->url(); ?>" alt="<?=$image->name()?>" />
+      <a>
+        <img loading="lazy" src="<?= $image->resize(null, 180)->url(); ?>" alt="<?=$image->name()?>"
+          srcset="<?= $image->srcset([300, 800, 1024]) ?>" />
       </a>
       <?php endforeach ?>
     </li>

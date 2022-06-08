@@ -24,7 +24,7 @@ body {
   padding-right: 0.4em;
   padding-bottom: 1em;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   -webkit-text-size-adjust: none;
 }
 
@@ -54,14 +54,6 @@ h3 {
   padding: 0em 0.4em 0.4em 0em;
 }
 
-.project .designproject {
-  margin-left: 4em;
-}
-
-.designproject {
-  margin-left: 5em;
-}
-
 li img {
   height: 100%;
   width: auto;
@@ -70,15 +62,19 @@ li img {
 .slideshow {
   display: grid;
   grid-template: 'container';
-  place-items: right;
-  place-content: right;
   overflow: hidden;
+  justify-items: end;
 }
 
 .slides {
   opacity: 0;
   z-index: 1;
   grid-area: container;
+}
+
+.slides img {
+  max-width: 720px;
+  max-height: 480px;
 }
 
 .showing {
@@ -89,6 +85,18 @@ li img {
 @media (max-width: $layout-breakpoint-small) {
   .photoproject li {
     height: 100%;
+  }
+  .slideshow {
+    justify-items: left;
+  }
+  .slides img {
+    max-width: 375px;
+    max-height: 200px;
+  }
+
+  li img {
+    max-width: 375px;
+    max-height: 150px;
   }
 
   h2,

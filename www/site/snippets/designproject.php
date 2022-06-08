@@ -1,8 +1,8 @@
-<section id="<?= $data->id() ?>" class="slideshow">
+<section class="slideshow">
   <?php foreach($data->images() as $image): ?>
   <div class="slides">
-    <img src=" <?= $image->resize(null, 500)->url(); ?>" alt="<?=$image->name()?>"
-      data-slide="{<?= $image->resize(null, 180)->url(); ?>}" />
+    <img src=" <?= $image->resize(null, 300)->url(); ?>" alt="<?=$image->name()?>"
+      data-slide="{<?= $image->resize(null, 300)->url(); ?>}" srcset="<?= $image->srcset([300, 800, 1440]) ?>" />
   </div>
   <?php endforeach ?>
 </section>
