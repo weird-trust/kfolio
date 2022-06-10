@@ -3,12 +3,12 @@ icon: 📔
 
 options: 
   changeTemplate: 
-    - designproject 
     - photoproject
+    - designproject 
 
     
 sections:
-  images:
+  List-images:
     type: files
     layout: cards
     image:

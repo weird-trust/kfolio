@@ -1,8 +1,8 @@
 <section class="slideshow">
   <?php foreach($data->images() as $image): ?>
-  <div class="slides">
-    <img src=" <?= $image->resize(null, 300)->url(); ?>" alt="<?=$image->name()?>"
-      data-slide="{<?= $image->resize(null, 300)->url(); ?>}" srcset="<?= $image->srcset([300, 800, 1440]) ?>" />
+  <div class=" slides">
+    <img class="lazy-loaded-image lazy" alt="<?= $image->alt() ?>" src="www/assets/images/placeholder.webp"
+      data-src="<?= $image->resize(750)->url() ?>" />
   </div>
   <?php endforeach ?>
 </section>
