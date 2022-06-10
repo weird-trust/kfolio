@@ -18,13 +18,17 @@ $layout-breakpoint-large: 1440px;
   src: url('../www/assets/fonts/Mondwest-Regular.woff2') format('woff2');
 }
 
+header {
+  padding-bottom: 5rem;
+}
+
 body {
   overflow-x: hidden;
   padding-left: 0.4em;
   padding-right: 0.4em;
   padding-bottom: 1em;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-text-size-adjust: none;
 }
 
@@ -67,7 +71,7 @@ li img {
   display: grid;
   grid-template: 'container';
   overflow: hidden;
-  justify-items: end;
+  justify-content: end;
 }
 
 .slides {
@@ -88,14 +92,13 @@ li img {
 
 @media (max-width: $layout-breakpoint-small) {
   .photoproject li {
-    height: 100%;
+    width: min-content;
   }
   .slideshow {
-    justify-items: left;
+    justify-content: left;
   }
   .slides img {
-    max-width: 375px;
-    max-height: 200px;
+    max-width: 54vw;
   }
 
   li img {

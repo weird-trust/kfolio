@@ -5,4 +5,11 @@
       data-src="<?= $image->resize(750)->url() ?>" />
   </div>
   <?php endforeach ?>
+  <div class="txt-wrapper">
+    <h2 class="title">
+      <?= $data->title() ?>
+    </h2>
+    <h3 class="info"> <?= $data->year() ?></h3>
+  </div>
+
 </section>

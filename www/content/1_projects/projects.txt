@@ -2,4 +2,4 @@ Title: Design- and Photoprojects
 
 ----
 
-Text: xxx
+year: 2020

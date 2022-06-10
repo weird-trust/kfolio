@@ -1,4 +1,4 @@
-<section>
+<section class="photoprojects">
   <ul class="photoproject">
     <li>
       <?php foreach($data->images() as $image): ?>
@@ -8,8 +8,8 @@
       <?php endforeach ?>
     </li>
   </ul>
-  <h2 class=" title">
+  <h2 class="title">
     <?= $data->title() ?>
   </h2>
-  <h3 class="info"><?= $data->text()->kirbytext() ?></h3>
+  <h3 class="info"> <?= $data->year() ?></h3>
 </section>
