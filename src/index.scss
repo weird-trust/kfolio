@@ -15,7 +15,7 @@ $layout-breakpoint-large: 1440px;
 
 @font-face {
   font-family: Mondwest;
-  src: url('../www/assets/fonts/Mondwest-Regular.woff2') format('woff2');
+  src: url('../fonts/Mondwest-Regular.woff2') format('woff2');
 }
 
 header {
@@ -71,6 +71,12 @@ li img {
   display: grid;
   grid-template: 'container';
   overflow: hidden;
+}
+
+.left {
+  justify-content: start;
+}
+.right {
   justify-content: end;
 }
 
@@ -94,9 +100,7 @@ li img {
   .photoproject li {
     width: min-content;
   }
-  .slideshow {
-    justify-content: left;
-  }
+
   .slides img {
     max-width: 54vw;
   }
