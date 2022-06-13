@@ -1,16 +1,10 @@
 title: Design- and Photoprojects
 icon: 📔
 
-options: 
-  changeTemplate: 
-    - designproject 
-    - photoproject
-
 sections:
-  projects:
+  all-projects:
     type: pages
     layout: cards
     image:
       ratio: 16/9
       cover: true
-

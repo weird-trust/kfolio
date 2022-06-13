@@ -1,0 +1,16 @@
+title: project
+icon: 📔
+
+options: 
+  changeTemplate: 
+    - designproject 
+    - photoproject
+
+sections:
+  projects:
+    type: project
+    layout: cards
+    image:
+      ratio: 4/5
+      cover: true
+

@@ -9,10 +9,4 @@ status:
 pages:
   template: home
 
-fields:
-  text:
-    type: textarea
-    size: huge
-
-
 
