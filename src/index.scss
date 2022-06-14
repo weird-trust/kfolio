@@ -11,11 +11,13 @@ $layout-breakpoint-large: 1440px;
   font-size: 1em;
   list-style: none;
   box-sizing: border-box;
+  width: 100%;
 }
 
 @font-face {
   font-family: Mondwest;
-  src: url('../fonts/Mondwest-Regular.woff2') format('woff2');
+  // src: url('../fonts/Mondwest-Regular.woff2') format('woff2');
+  src: url('../www/assets/fonts/Mondwest-Regular.woff2') format('woff2');
 }
 
 header {
@@ -24,16 +26,19 @@ header {
 
 body {
   overflow-x: hidden;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  padding-bottom: 1em;
+  padding: 0 0.4em;
   font-family: sans-serif;
   font-size: 16px;
   -webkit-text-size-adjust: none;
+  width: 100%;
+}
+
+section {
+  width: 100%;
 }
 
 h1 {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 0.4em;
@@ -45,7 +50,7 @@ p {
 
 h2,
 h3 {
-  font-size: 4em;
+  font-size: 2rem;
   line-height: 1em;
   display: block;
   font-weight: 500;
@@ -54,6 +59,10 @@ h3 {
 h3 {
   font-family: Mondwest, serif;
   padding-bottom: 2.4em;
+}
+
+.photoproject {
+  width: 100%;
 }
 
 .photoproject li {
@@ -70,7 +79,6 @@ li img {
 .slideshow {
   display: grid;
   grid-template: 'container';
-  overflow: hidden;
 }
 
 .left {
@@ -96,18 +104,24 @@ li img {
   z-index: 2;
 }
 
+.imprint p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.5em;
+}
+
 @media (max-width: $layout-breakpoint-small) {
-  .photoproject li {
-    width: min-content;
+  .photoproject {
+    width: 100%;
+  }
+
+  .photoproject li img {
+    max-width: 100%;
   }
 
   .slides img {
-    max-width: 54vw;
-  }
-
-  li img {
-    max-width: 375px;
-    max-height: 120px;
+    max-width: 100%;
   }
 
   h2,

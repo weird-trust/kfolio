@@ -1,12 +1,26 @@
 title: Home
 icon: 📝
-preset: page
-files: true
 
-status:
-  draft: true
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        about:
+          type: textarea
+          size: small
 
-pages:
-  template: home
+  sidebar:
+    width: 1/3
+    fields:
+      toogle:
+        label: Left aligend?
+        type: toggle
+        text: 
+          - "no"
+          - "yes"
+
+
+
 
 

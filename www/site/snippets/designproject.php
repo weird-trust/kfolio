@@ -2,8 +2,8 @@
 <section class="slideshow right">
   <?php foreach($data->images() as $image): ?>
   <div class="slides">
-    <img class="lazy-loaded-image lazy" alt="<?= $image->alt() ?>" src="www/assets/images/placeholder.webp"
-      data-src="<?= $image->resize(750)->url() ?>" />
+    <img class="lazy-loaded-image lazy" alt="<?= $image->alt() ?>" src="../images/placeholder.webp"
+      data-src="<?= $image->resize(1400)->url() ?>" />
   </div>
   <?php endforeach ?>
   <div class="txt-wrapper">
@@ -14,12 +14,13 @@
   </div>
 </section>
 <?php endif ?>
+
 <?php if($data->toogle()->bool() === true): ?>
 <section class="slideshow left">
   <?php foreach($data->images() as $image): ?>
   <div class="slides">
-    <img class="lazy-loaded-image lazy" alt="<?= $image->alt() ?>" src="www/assets/images/placeholder.webp"
-      data-src="<?= $image->resize(750)->url() ?>" />
+    <img class="lazy-loaded-image lazy" alt="<?= $image->alt() ?>" src="../images/placeholder.webp"
+      data-src="<?= $image->resize(1400)->url() ?>" />
   </div>
   <?php endforeach ?>
   <div class="txt-wrapper">
