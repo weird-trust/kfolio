@@ -1,32 +1,28 @@
-const { merge } = require('webpack-merge')
-const webpack = require('webpack')
-const common = require('./webpack.config.common')
-const user = require('./scripts/utils/format-config')(require('./main.config.js'))
+const { merge } = require('webpack-merge');
+const webpack = require('webpack');
+const common = require('./webpack.config.common');
+const user = require('./scripts/utils/format-config')(require('./main.config.js'));
 
-const cssLoaders = (
-  [
-    {
-      loader: 'style-loader',
-      options: {
-        injectType: 'singletonStyleTag'
-      }
-    }
-  ].concat(common.CSSLoaders)
-)
+const cssLoaders = [
+  {
+    loader: 'style-loader',
+    options: {
+      injectType: 'singletonStyleTag',
+    },
+  },
+].concat(common.CSSLoaders);
 
 // append resolve-url-loader before the preprocessor loader so that
 // we can avoid broken relative url with the dev server
 if (user.css.preprocessorLoader) {
   for (let i = 0; i < cssLoaders.length; i++) {
-    const obj = cssLoaders[i]
-    if (obj.loader !== user.css.preprocessorLoader) continue
-    cssLoaders.splice(i, 0,
-      {
-        loader: 'resolve-url-loader',
-        options: { sourceMap: true }
-      }
-    )
-    break
+    const obj = cssLoaders[i];
+    if (obj.loader !== user.css.preprocessorLoader) continue;
+    cssLoaders.splice(i, 0, {
+      loader: 'resolve-url-loader',
+      options: { sourceMap: true },
+    });
+    break;
   }
 }
 
@@ -37,25 +33,25 @@ const devConfig = {
     rules: [
       {
         test: user.css.sourceRegexExt,
-        use: cssLoaders
+        use: cssLoaders,
       },
       {
         test: /\.(svg|png|jpg|gif|ttf|otf|woff|woff2|eot)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: '#eval-source-map'
-}
+  devtool: '#eval-source-map',
+};
 
-module.exports = merge(common.webpack, devConfig)
+module.exports = merge(common.webpack, devConfig);

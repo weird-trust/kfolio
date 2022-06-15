@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 /**
  * BUNDLE ENTRY FILES
@@ -8,9 +8,9 @@ const path = require('path')
  * The builds folder in www/assets is auto cleaned after each build.
  */
 const entries = {
-  'src/index.js': 'www/assets/builds/bundle.js',
-  'src/index.scss': 'www/assets/builds/bundle.css'
-}
+  'src/index.js': 'www/assets/bundle.js',
+  'src/index.scss': 'www/assets/bundle.css',
+};
 
 /**
  * CSS CONFIGURATION
@@ -21,22 +21,22 @@ const css = {
   // Be sure to have your entries and sourcefiles named with the good file ext
   // —> .scss for sass / .less for less / .styl for stylus
   // Set to 'manual' to handle css yourself (using css-next for instance)
-  preprocessor: 'sass'
-}
+  preprocessor: 'sass',
+};
 
 /**
  * FOLDER ARCHITECTURE
  * All paths used in kirby-webpack.
  * change them if you want to customize the folder architecture.
  */
-const paths = {}
+const paths = {};
 
 // all your bundlable sources (less/sass/styl & js) will be in this folder
-paths.src = path.join('__dirname', 'src')
+paths.src = path.join('__dirname', 'src');
 
 // public folder to deploy to your server
 // if you use a proxy, this is often the document root of the server used
-paths.www = path.join(__dirname, 'www')
+paths.www = path.join(__dirname, 'www');
 
 // public baseUrl of your site, generally '/'.
 // it often change depending on your environment,
@@ -44,16 +44,16 @@ paths.www = path.join(__dirname, 'www')
 paths.basepaths = {
   development: '/',
   preprod: '/',
-  production: '/'
-}
+  production: '/',
+};
 
 // all kirby paths
 paths.kirby = {
   core: path.join(paths.www, 'kirby'),
   assets: path.join(paths.www, 'assets'),
   cache: path.join(paths.www, 'site', 'cache'),
-  plugins: path.join(paths.www, 'site', 'plugins')
-}
+  plugins: path.join(paths.www, 'site', 'plugins'),
+};
 
 /**
  * DEVSERVER CONFIGURATION
@@ -88,19 +88,17 @@ const devServer = {
   logPhpErrors: true,
 
   // Force browserSync to not watch some specific files/folder
-  ignored: [
-    path.join(paths.kirby.plugins, 'page-lock')
-  ]
-}
+  ignored: [path.join(paths.kirby.plugins, 'page-lock')],
+};
 
 // the appEnv variable can be used to create environment-specific behaviours
 // By default, appEnv can be one of those three values:
 //   - development (via npm run start)
 //   - preprod (via npm run build:preprod)
 //   - production (via npm run build or npm run stats)
-const appEnv = process.env.APP_ENV || process.env.NODE_ENV || 'development'
+const appEnv = process.env.APP_ENV || process.env.NODE_ENV || 'development';
 
 // appEnv is used to choose the correct basepath from paths.basepaths
-paths.basepath = paths.basepaths[appEnv] || paths.basepaths.development
+paths.basepath = paths.basepaths[appEnv] || paths.basepaths.development;
 
-module.exports = { paths, entries, css, devServer, appEnv }
+module.exports = { paths, entries, css, devServer, appEnv };

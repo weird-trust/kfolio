@@ -16,14 +16,13 @@ $layout-breakpoint-large: 1440px;
 
 @font-face {
   font-family: Mondwest;
-  // src: url('../fonts/Mondwest-Regular.woff2') format('woff2');
-  src: url('../www/assets/fonts/Mondwest-Regular.woff2') format('woff2');
+  src: url('./fonts/Mondwest-Regular.woff2') format('woff2');
 }
 
 header {
   padding-bottom: 5rem;
+  position: fixed;
 }
-
 body {
   overflow-x: hidden;
   padding: 0 0.4em;
@@ -37,6 +36,13 @@ section {
   width: 100%;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: black;
+}
+
 h1 {
   font-size: 1rem;
   font-weight: normal;
@@ -44,21 +50,22 @@ h1 {
   padding-top: 0.4em;
 }
 
-p {
-  padding-bottom: 2rem;
-}
-
-h2,
-h3 {
+h2 {
   font-size: 2rem;
   line-height: 1em;
   display: block;
   font-weight: 500;
 }
-
 h3 {
   font-family: Mondwest, serif;
+  font-size: 2.2rem;
   padding-bottom: 2.4em;
+  display: block;
+  font-weight: 500;
+}
+
+p {
+  padding-bottom: 2rem;
 }
 
 .photoproject {
@@ -78,7 +85,7 @@ li img {
 
 .slideshow {
   display: grid;
-  grid-template: 'container';
+  grid-template-columns: 1fr;
 }
 
 .left {
@@ -89,19 +96,19 @@ li img {
 }
 
 .slides {
-  opacity: 0;
-  z-index: 1;
-  grid-area: container;
+  display: none;
+  grid-column: span 1;
+  grid-row: 1;
+  width: 100%;
+  max-width: 720px;
 }
 
 .slides img {
-  max-width: 720px;
-  max-height: 480px;
+  width: 100%;
 }
 
 .showing {
-  opacity: 1;
-  z-index: 2;
+  display: block;
 }
 
 .imprint p {
@@ -109,6 +116,12 @@ li img {
   left: 0;
   bottom: 0;
   padding: 0.5em;
+}
+
+@media (min-width: $layout-breakpoint-large) {
+  .slides {
+    max-width: 960px;
+  }
 }
 
 @media (max-width: $layout-breakpoint-small) {
@@ -124,8 +137,25 @@ li img {
     max-width: 100%;
   }
 
-  h2,
-  h3 {
+  h2 {
     font-size: 1em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+}
+
+[style*='--ratio'] {
+  height: 0;
+  padding-bottom: calc(100% / (var(--ratio)));
+  position: relative;
+  box-sizing: border-box;
+
+  > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
   }
 }
