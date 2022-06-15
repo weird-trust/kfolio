@@ -89,10 +89,10 @@ li img {
 }
 
 .left {
-  justify-content: start;
+  justify-items: flex-start;
 }
 .right {
-  justify-content: end;
+  justify-items: flex-end;
 }
 
 .slides {
@@ -100,6 +100,10 @@ li img {
   grid-column: span 1;
   grid-row: 1;
   width: 100%;
+  max-width: 720px;
+}
+
+.txt-wrapper {
   max-width: 720px;
 }
 
@@ -119,7 +123,8 @@ li img {
 }
 
 @media (min-width: $layout-breakpoint-large) {
-  .slides {
+  .slides,
+  .txt-wrapper {
     max-width: 960px;
   }
 }

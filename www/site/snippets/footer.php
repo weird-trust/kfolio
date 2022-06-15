@@ -7,7 +7,7 @@
   <span><a href="<?= $pages->find('imprint')->url() ?>">Imprint</a>, Privacy policy, Contact</span>
 </footer>
 
-<?= js('assets/builds/bundle.js') ?>
+<?= js('assets/bundle.js') ?>
 
 
 </html>
