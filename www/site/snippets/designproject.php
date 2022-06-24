@@ -16,10 +16,15 @@
     </div>
   </div>
   <?php endforeach ?>
+
   <div class="txt-wrapper">
-    <h2 class="title">
-      <?= $data->title() ?>
-    </h2>
-    <h3 class="info"> <?= $data->year() ?></h3>
+    <div>
+      <h2 class="title">
+        <?= $data->title() ?>
+      </h2>
+    </div>
+
+    <h3 class="date"> <?= $data->year() ?></h3>
+    <p class="counter">( <span> 1</span> / <span><?= $data->images()->count() ?> )</span></p>
   </div>
 </section>

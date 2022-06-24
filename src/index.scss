@@ -12,6 +12,7 @@ $layout-breakpoint-large: 1440px;
   list-style: none;
   box-sizing: border-box;
   width: 100%;
+  user-select: none;
 }
 
 @font-face {
@@ -20,7 +21,6 @@ $layout-breakpoint-large: 1440px;
 }
 
 header {
-  padding-bottom: 5rem;
   position: fixed;
 }
 body {
@@ -32,6 +32,9 @@ body {
   width: 100%;
 }
 
+section:first-of-type {
+  padding-top: 2rem;
+}
 section {
   width: 100%;
 }
@@ -56,10 +59,13 @@ h2 {
   display: block;
   font-weight: 500;
 }
+h2.title {
+  padding-top: 0.5rem;
+}
+
 h3 {
   font-family: Mondwest, serif;
   font-size: 2.2rem;
-  padding-bottom: 2.4em;
   display: block;
   font-weight: 500;
 }
@@ -101,10 +107,12 @@ li img {
   grid-row: 1;
   width: 100%;
   max-width: 720px;
+  background-color: black;
 }
 
 .txt-wrapper {
   max-width: 720px;
+  padding-bottom: 2.4rem;
 }
 
 .slides img {
@@ -113,6 +121,7 @@ li img {
 
 .showing {
   display: block;
+  animation: fadeIn 0.3s;
 }
 
 .imprint p {
@@ -120,6 +129,14 @@ li img {
   left: 0;
   bottom: 0;
   padding: 0.5em;
+}
+
+footer {
+  padding-bottom: 1.5rem;
+}
+
+h3.info {
+  padding-bottom: 2.4rem;
 }
 
 @media (min-width: $layout-breakpoint-large) {
@@ -155,6 +172,7 @@ li img {
   padding-bottom: calc(100% / (var(--ratio)));
   position: relative;
   box-sizing: border-box;
+  background-color: black;
 
   > * {
     position: absolute;
@@ -162,5 +180,14 @@ li img {
     width: 100%;
     left: 0;
     top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
